@@ -5,64 +5,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenAGI Foundation</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #FBF9F9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+            line-height: 1.5;
             color: #333;
+            background-color: #FAF9F5;
         }
-        
+
         .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 40px;
+        }
+
+        header {
             text-align: center;
-            max-width: 750px;
-            padding: 40px;
-            background: rgba(250, 250, 240, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(200, 200, 190, 0.2);
+            margin-bottom: 8px;
         }
-        
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #4a5568;
+            transform: skew(-15deg);
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid white;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
         h1 {
-            font-size: 3em;
-            margin: 0 0 30px 0;
-            font-weight: bold;
-            letter-spacing: -1px;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+            text-align: center;
         }
-        
-        .intro {
-            font-size: 1.2em;
-            line-height: 1.6;
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: #4a5568;
+            text-decoration: underline;
+            margin: 0 30px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #2d3748;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 30px 0 12px 0;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 20px 0 8px 0;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        .intro-text {
             margin-bottom: 25px;
-            opacity: 0.9;
         }
-        
-        .contact {
-            font-size: 1.1em;
-            opacity: 0.8;
+
+        .building-list {
+            margin: 20px 0;
+            padding-left: 20px;
         }
-        
-        .contact a {
-            color: #8b7355;
-            text-decoration: none;
-            transition: color 0.3s ease;
+
+        .building-list p {
+            margin-bottom: 6px;
         }
-        
-        .contact a:hover {
-            color: #5d4e37;
+
+        .manifesto-section {
+            margin: 40px 0;
+        }
+
+        .manifesto-intro {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #718096;
+        }
+
+        .age-item {
+            margin-bottom: 15px;
+        }
+
+        .fourth-age-highlight {
+            background-color: #edf2f7;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .fourth-age-highlight p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .hl {
+            font-weight: 1000;
+            color: #2d3748;
+        }
+
+        .paradigm-section {
+            margin: 40px 0;
+        }
+
+        .paradigm-intro {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #718096;
+        }
+
+        .paradigm-item {
+            margin-bottom: 20px;
+        }
+
+        .paradigm-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                margin: 0 15px;
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>OpenAGI Foundation</h1>
-        <p class="intro">A frontier AI research and product org based in California, United States</p>
-        <p class="contact">Contact: <a href="mailto:contact@agiopen.org">contact@agiopen.org</a></p>
+        <header>
+            <div class="logo">
+                <span class="logo-text">OpenAGI Foundation</span>
+            </div>
+        </header>
+        <nav>
+            <a href="#joinus">Join Us</a>
+            <a href="mailto:contact@agiopen.org">Email: contact@agiopen.org</a>
+        </nav>
+
+        <div class="content">
+            <div class="intro-text">
+                <p>OpenAGI Foundation is founded by world-class researchers and engineers from MIT, UIUC and CMU, who have had pioneering contributions to the field of LLM and Agents. Before OpenAGI was founded, the prior work from the team has served as foundations for several hundreds of projects on GitHub, received more than 20M downloads, ranking GitHub global top 1 for two times, officially covered by MIT and prestigious news media. Prior to OpenAGI, people in the team also founded an AI agent platform that has 6M users, went publicly listed, and had $400M daily trading volume in the financial market.</p>
+            </div>
+
+            <p>Here is what we are building at OpenAGI:</p>
+            <div class="building-list">
+                <p>1. Agentic Foundation Models</p>
+                <p>2. Push the Computers into their Fourth Age</p>
+                <p>3. Open-Source Ecosystem</p>
+            </div>
+
+            <h2>Agentic Foundation Models</h2>
+            <p>The existing agent models inherit the training paradigm that was discovered 3-7 years ago, which was primarily for chat and reasoning (math and coding) scenarios. In the agent era, we need to rethink each stage of such an old paradigm. <strong><u>Agentic foundation models, purposely built for universally-capable agents, redefine the approach of pre-training, mid-training, post-training and large-scale reinforcement learning.</u></strong> The first gigantic use case of agentic foundation models is to push computers into their Fourth Age.</p>
+
+            <div class="manifesto-section">
+                <h2>The Fourth Age of Computers</h2>
+                <p class="manifesto-intro">Computers has always moved in ages.</p>
+
+                <div class="age-item">
+                    <p class="age-description"><strong>The First Age: Mainframes.</strong> Machines owned us. Only the elite could touch them. Computing was centralized, rigid, inaccessible. <strong>The Second Age: PCs.</strong> We shared control. A keyboard, a mouse, a screen — our bridge to the machine. Powerful, but still on its terms. <strong>The Third Age: Smartphones.</strong> Computers shrank into our pockets. Always with us, always demanding us. A constant companion, but also a constant distraction.</p>
+                </div>
+
+                <div class="age-item">
+                    <p class="age-description"><strong>The Fourth Age: OpenAGI.</strong> Now we arrive at the threshold of something new: <strong><u>A computer that thinks and acts for you. The Fourth Age is not a tool. Not a device. Not an app. It is a new definition of computing itself.</u></strong></p>
+                </div>
+            </div>
+            <h2>Open-Source Ecosystem</h2>
+            <p>We believe every major technical advancement in human history should be open-sourced. By fostering a collaborative environment, we can accelerate innovation and ensure that the benefits of technology are shared by all. We want to democratize and bring super intelligence to your own hands, so that it shines thousand times more brightly.</p>
+
+            <h2 id="joinus">Join Us</h2>
+            <p>Email: contact@agiopen.org</p>
+            <p>1. Backend Engineers (Python)</p>
+            <p>2. Research Engineers (ML/AI)</p>
+            <p>3. Research Scientists (LLMs, Agents)</p>
+        </div>
     </div>
 </body>
 </html>
