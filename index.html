@@ -5,211 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenAGI Foundation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* --- General Styles --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
-            line-height: 1.5;
-            color: #333;
-            background-color: #FAF9F5;
-        }
+    body {
+        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+        line-height: 1.6;
+        color: #333;
+        background-color: #FAF9F5;
+    }
 
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* --- Header & Logo --- */
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #4a5568;
+    }
+
+    /* --- Navigation --- */
+    nav {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    nav a {
+        color: #4a5568;
+        text-decoration: underline;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        transition: color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+        color: #2d3748;
+    }
+    
+    /* --- Typography --- */
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 40px 0 15px 0;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 20px 0 8px 0;
+    }
+
+    p {
+        font-size: 1rem; /* Base font size for desktop */
+        color: #4a5568;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+    
+    .intro-text {
+        margin-bottom: 25px;
+    }
+
+    .building-list {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    /* --- Section Specific Styles --- */
+    .manifesto-section {
+        margin: 40px 0;
+    }
+
+    .manifesto-intro {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #718096;
+    }
+
+    .age-item {
+        margin-bottom: 15px;
+    }
+
+    /* --- Mobile Responsiveness --- */
+    /* This media query targets tablets and mobile phones */
+    @media (max-width: 768px) {
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px 15px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: #4a5568;
-            transform: skew(-15deg);
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 12px solid white;
+            padding: 30px 30px; /* Increased left/right padding from 15px to 20px */
         }
 
         .logo-text {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #4a5568;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #718096;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        nav {
-            text-align: center;
-            margin-bottom: 30px;
+            font-size: 1.75rem;
         }
 
         nav a {
-            color: #4a5568;
-            text-decoration: underline;
-            margin: 0 15px;
+            display: block;
+            margin: 10px auto;
             font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: #2d3748;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #4a5568;
-            margin: 30px 0 12px 0;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #4a5568;
-            margin: 20px 0 8px 0;
+            font-size: 1.3rem; 
         }
 
         p {
-            font-size: 1rem;
-            color: #4a5568;
-            margin-bottom: 6px;
-            text-align: justify;
+            text-align: left;
+            font-size: 0.9rem;
         }
-
-        .intro-text {
-            margin-bottom: 25px;
-        }
-
-        .building-list {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        .building-list p {
-            margin-bottom: 6px;
-        }
-
-        .manifesto-section {
-            margin: 40px 0;
-        }
-
-        .manifesto-intro {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #718096;
-        }
-
-        .age-item {
-            margin-bottom: 15px;
-        }
-
-        .fourth-age-highlight {
-            background-color: #edf2f7;
-            padding: 25px;
-            margin: 25px 0;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .fourth-age-highlight p {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2d3748;
-            margin-bottom: 8px;
-        }
-
-        .hl {
-            font-weight: 1000;
-            color: #2d3748;
-        }
-
-        .paradigm-section {
-            margin: 40px 0;
-        }
-
-        .paradigm-intro {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #718096;
-        }
-
-        .paradigm-item {
-            margin-bottom: 20px;
-        }
-
-        .paradigm-title {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 6px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .logo-text {
-                font-size: 1.5rem;
-            }
-
-            nav a {
-                margin: 0 15px;
-                font-size: 1rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-        }
+    }
     </style>
 </head>
 <body>
@@ -242,15 +167,14 @@
             <div class="manifesto-section">
                 <h2>The Fourth Age of Computers</h2>
                 <p class="manifesto-intro">Computers has always moved in ages.</p>
-
                 <div class="age-item">
-                    <p class="age-description"><strong>The First Age: Mainframes.</strong> Machines owned us. Only the elite could touch them. Computing was centralized, rigid, inaccessible. <strong>The Second Age: PCs.</strong> We shared control. A keyboard, a mouse, a screen — our bridge to the machine. Powerful, but still on its terms. <strong>The Third Age: Smartphones.</strong> Computers shrank into our pockets. Always with us, always demanding us. A constant companion, but also a constant distraction.</p>
+                    <p><strong>The First Age: Mainframes.</strong> Machines owned us. Only the elite could touch them. Computing was centralized, rigid, inaccessible. <strong>The Second Age: PCs.</strong> We shared control. A keyboard, a mouse, a screen — our bridge to the machine. Powerful, but still on its terms. <strong>The Third Age: Smartphones.</strong> Computers shrank into our pockets. Always with us, always demanding us. A constant companion, but also a constant distraction.</p>
                 </div>
-
                 <div class="age-item">
-                    <p class="age-description"><strong>The Fourth Age: OpenAGI.</strong> Now we arrive at the threshold of something new: <strong><u>A computer that thinks and acts for you. The Fourth Age is not a tool. Not a device. Not an app. It is a new definition of computing itself.</u></strong></p>
+                    <p><strong>The Fourth Age: OpenAGI.</strong> Now we arrive at the threshold of something new: <strong><u>A computer that thinks and acts for you. The Fourth Age is not a tool. Not a device. Not an app. It is a new definition of computing itself.</u></strong></p>
                 </div>
             </div>
+            
             <h2>Open-Source Ecosystem</h2>
             <p>We believe every major technical advancement in human history should be open-sourced. By fostering a collaborative environment, we can accelerate innovation and ensure that the benefits of technology are shared by all. We want to democratize and bring super intelligence to your own hands, so that it shines thousand times more brightly.</p>
 
